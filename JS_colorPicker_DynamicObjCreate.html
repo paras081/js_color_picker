@@ -1,0 +1,41 @@
+<html>
+    <head>
+		<title>Demo Dynamic Object Creation using JS | color picker in JS</title>
+              
+        <script type="text/javascript">
+            
+            var btnJ = document.getElementById("btnArea");
+            var button;
+            
+            function createBtn(){
+                for(var i =0 ; i < 255; i++)
+                {
+                    button = document.createElement("button");
+                    button.innerHTML = "HSL("+i+",100%, 50%)";
+//                    button.innerHTML = "";
+                    button.style.backgroundColor = "hsl("+i+",100%, 50%)";
+                    button.setAttribute("onclick","colorFun("+i+")");
+                    document.getElementById("btnArea").appendChild(button);
+                }
+            }
+            function colorFun(colorValue){
+                document.getElementById("body").style.backgroundColor =  "hsl("+colorValue+",100%, 50%)";
+            }
+        </script>   
+	</head>
+	<body id="body" onload="createBtn()">    
+        
+        <div id="btnArea">
+<!--            place all the buttons of color picker-->
+        </div>      
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
